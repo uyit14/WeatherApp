@@ -5,3 +5,5 @@ function getTem(cityName){
     .then(res => res.json())
     .then(resJson => resJson.list[0].main.temp);
 }
+
+export default getTem;
