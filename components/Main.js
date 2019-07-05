@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { getTem } from '../api/getTem';
 import { connect } from 'react-redux';
-import { startFetchData, fetchSuccess, fetchFail, fetchDataThunk } from '../redux/actionCreators';
+import * as actionCreators from '../redux/actionCreators';
 
 class Main extends Component {
     constructor(props) {
@@ -57,4 +57,4 @@ function mapStateToProps(state) {
     return { cityName: state.cityName, err: state.err, isLoading: state.isLoading, temp: state.temp }
 }
 
-export default connect(mapStateToProps, { startFetchData, fetchSuccess, fetchFail, fetchDataThunk})(Main)
+export default connect(mapStateToProps, actionCreators)(Main)
